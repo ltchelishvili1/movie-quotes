@@ -21,7 +21,7 @@ class QuoteFactory extends Factory
 		return [
 			'user_id'  => User::factory(),
 			'movie_id' => Movie::factory(),
-			'quote'    => $this->faker->paragraph,
+			'title'    => $this->faker->paragraph,
 		];
 	}
 }
