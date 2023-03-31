@@ -2,10 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Movie;
+
 class QuotesController extends Controller
 {
-	public function index()
+	public function index(Movie $movie)
 	{
-		return view('quotes.index');
+		$randomMovie = $movie->get()->random();
+		return view('quotes.index',[
+			'movie' => $randomMovie,
+			'quote' => $randomMovie->quote->random()
+		]);
 	}
 }
