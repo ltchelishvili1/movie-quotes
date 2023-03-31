@@ -14,7 +14,7 @@ class Quote extends Model
 
 	protected $with = ['movie', 'user'];
 
-	public function movie()
+	public function movie(): BelongsTo
 	{
 		return $this->belongsTo(Movie::class);
 	}
