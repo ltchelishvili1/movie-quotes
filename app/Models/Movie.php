@@ -7,16 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Movie extends Model
 {
-    use HasFactory;
+	use HasFactory;
 
+	public function author()
+	{
+		return $this->belongsTo(User::class, 'user_id');
+	}
 
-    public function author()
-    {
-        return $this->belongsTo(User::class, 'user_id');
-    }
-
-    public function quote()
-    {
-        return $this->hasMany(Quote::class);
-    }
+	public function quote()
+	{
+		return $this->hasMany(Quote::class);
+	}
 }
