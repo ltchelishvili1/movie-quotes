@@ -10,8 +10,12 @@ class MovieController extends Controller
 	/**
 	 * Display a listing of the resource.
 	 */
-	public function index()
+	public function index(Movie $movie)
 	{
+		///ddd($movie->quotes);
+		return view('movie.index', [
+			'movie' => $movie,
+		]);
 	}
 
 	/**

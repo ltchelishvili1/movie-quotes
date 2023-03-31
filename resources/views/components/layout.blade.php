@@ -16,9 +16,9 @@
     }
 </style>
 
-<body>
+<body class="background-radial-gradient">
     <x-languages />
-    <div class="background-radial-gradient w-full h-full h-screen flex items-center justify-center">
+    <div class=" w-full h-full  ">
         {{$slot}}
     </div>
 </body>
