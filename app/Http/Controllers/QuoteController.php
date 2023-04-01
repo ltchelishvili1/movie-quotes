@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Quote;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class QuoteController extends Controller
@@ -10,7 +11,7 @@ class QuoteController extends Controller
 	/**
 	 * Display a listing of the resource.
 	 */
-	public function index()
+	public function index(): View
 	{
 		return view('quotes.index', [
 			'quote' => Quote::get()->random(),
