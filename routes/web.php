@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\QuoteController;
 use App\Http\Controllers\SessionController;
@@ -23,3 +24,5 @@ Route::get('login', [SessionController::class, 'create'])->name('login')->middle
 Route::post('login', [SessionController::class, 'store'])->name('login.store')->middleware('guest');
 
 Route::get('logout', [SessionController::class, 'destroy'])->name('logout')->middleware('auth');
+
+Route::get('lang/{lang}', [LanguageController::class, 'changeLang'])->name('lang.change');
