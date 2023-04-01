@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Movie;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
@@ -10,7 +11,7 @@ class MovieController extends Controller
 	/**
 	 * Display a listing of the resource.
 	 */
-	public function index()
+	public function index(Movie $movie)
 	{
 	}
 
@@ -31,8 +32,11 @@ class MovieController extends Controller
 	/**
 	 * Display the specified resource.
 	 */
-	public function show(Movie $movie)
+	public function show(Movie $movie): View
 	{
+		return view('movie.index', [
+			'movie' => $movie,
+		]);
 	}
 
 	/**
