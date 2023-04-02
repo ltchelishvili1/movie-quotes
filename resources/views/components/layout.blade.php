@@ -18,7 +18,7 @@
 
 <body class="background-radial-gradient">
     <x-languages />
-    <div class=" w-full h-full  ">
+    <div>
         {{$slot}}
     </div>
 </body>
