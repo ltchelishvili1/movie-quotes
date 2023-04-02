@@ -1,9 +1,11 @@
 <x-layout>
+    
     <div class="flex flex-col items-center justify-center h-screen ">
+       
         <table class=" divide-y divide-gray-200 border rounded-3xl">
-            <tbody class="bg-gray-300  divide-y divide-gray-200">
+            <tbody class="bg-gray-300 divide-y divide-gray-200">
                 @foreach ($movies as $movie)
-                <tr >
+                <tr>
                     <td class="px-4 py-4">
                         <div class="flex items-center">
                             <div class="text-4xl font-medium text-gray-900">
@@ -26,9 +28,16 @@
                             <button class="text-4xl text-gray-400">Delete</button>
                         </form>
                     </td>
+                    <td>
+                    </td>
                 </tr>
-                @endforeach
+                @endforeach                
             </tbody>
         </table>
+        <div class="pt-4">
+            <a href="{{route('movie.create')}}" class="inline-block py-3 px-6 text-white font-bold bg-blue-500 rounded hover:bg-blue-600">Add New Movie</a>
+       </div>
+       
     </div>
+</div>
 </x-layout>
