@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminMovieController;
+use App\Http\Controllers\AdminQuoteController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\QuoteController;
@@ -29,14 +30,16 @@ Route::group(['prefix' => 'user'], function () {
 Route::get('set-language/{language}', [LanguageController::class, 'setLanguage'])->name('set-language');
 
 Route::group(['prefix' => 'admin/movies'], function () {
-	Route::middleware(['auth'])->group(function () {	
+	Route::middleware(['auth'])->group(function () {
 		Route::get('/', [AdminMovieController::class, 'index'])->name('adminpanel');
 		Route::post('/', [AdminMovieController::class, 'store'])->name('movie.store');
 		Route::patch('/{movie}', [AdminMovieController::class, 'update'])->name('movie.update');
 		Route::delete('/{movie}', [AdminMovieController::class, 'destroy'])->name('movie.delete');
 		Route::get('/{movie}/edit', [AdminMovieController::class, 'edit'])->name('movie.edit');
 		Route::get('/create', [AdminMovieController::class, 'create'])->name('movie.create');
-		
 	});
 });
 
+Route::get('admin/movie/{movie}/quotes', [AdminQuoteController::class, 'index'])->name('adminquotes');
+Route::get('admin/movie/{movie}/quotes/create', [AdminQuoteController::class, 'create'])->name('quote.create');
+Route::post('admin/movie/{movie}/quotes/', [AdminQuoteController::class, 'store'])->name('quote.store');
