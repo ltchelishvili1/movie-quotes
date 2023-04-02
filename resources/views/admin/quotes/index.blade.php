@@ -25,11 +25,11 @@
                     </td>
 
                     <td class="px-4 py-4 whitespace-nowrap text-right text-4xl font-medium">
-                        <a href="/" class="text-blue-500 hover:text-blue-600">Edit</a>
+                        <a href="{{route('quote.edit', [$quote->movie,$quote])}}" class="text-blue-500 hover:text-blue-600">Edit</a>
                     </td>
 
                     <td class="px-4 py-4 whitespace-nowrap text-right text-4xl font-medium">
-                        <form method="POST" action="/">
+                        <form method="POST" action="{{route('quote.delete', [$quote->movie,$quote])}}">
                             @csrf
                             @method('DELETE')
 
