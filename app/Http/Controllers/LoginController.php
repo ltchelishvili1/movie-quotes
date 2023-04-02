@@ -6,14 +6,14 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Validation\ValidationException;
 
-class SessionController extends Controller
+class LoginController extends Controller
 {
-	public function create(): View
+	public function index(): View
 	{
-		return view('sessions.create');
+		return view('sessions.index');
 	}
 
-	public function store(): RedirectResponse
+	public function login(): RedirectResponse
 	{
 		$attributes = request()->validate([
 			'email'    => 'required|email',
@@ -29,13 +29,13 @@ class SessionController extends Controller
 
 		session()->regenerate();
 
-		return redirect('/');
+		return redirect(route('home'));
 	}
 
-public function destroy(): RedirectResponse
+public function logout(): RedirectResponse
 {
 	auth()->logout();
 
-	return redirect('/');
+	return redirect(route('home'));
 }
 }
