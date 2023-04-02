@@ -31,3 +31,4 @@ Route::get('set-language/{language}', [LanguageController::class, 'setLanguage']
 Route::get('admin/movies', [AdminMovieController::class, 'index'])->name('adminpanel');
 Route::get('admin/movies/{movie}/edit', [AdminMovieController::class, 'edit'])->name('movie.edit');
 Route::patch('admin/movies/{movie}', [AdminMovieController::class, 'update'])->name('movie.update');
+Route::delete('admin/movies/{movie}', [AdminMovieController::class, 'destroy'])->name('movie.delete');

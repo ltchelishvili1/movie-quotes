@@ -19,7 +19,7 @@
                     </td>
 
                     <td class="px-4 py-4 whitespace-nowrap text-right text-4xl font-medium">
-                        <form method="POST" action="/">
+                        <form method="POST" action="{{ route('movie.delete', [$movie]) }}">
                             @csrf
                             @method('DELETE')
 
