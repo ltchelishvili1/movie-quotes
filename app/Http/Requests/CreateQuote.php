@@ -24,6 +24,7 @@ class CreateQuote extends FormRequest
 		return [
 			'title_en'    => 'required',
 			'title_ka'    => 'required',
+			'thumbnail'   => 'required|image',
 		];
 	}
 }
