@@ -17,7 +17,11 @@
                     </td>
 
                     <td class="px-4 py-4 whitespace-nowrap text-right text-4xl font-medium">
-                        <a href="{{ route('movie.edit', [$movie]) }}" class="text-blue-500 hover:text-blue-600">Edit</a>
+                        <a href="{{ route('movie.edit', [$movie]) }}" class="text-blue-500 hover:text-blue-600">Edit Movie</a>
+                    </td>
+
+                    <td class="px-4 py-4 whitespace-nowrap text-right text-4xl font-medium">
+                        <a href="/" class="text-blue-500 hover:text-blue-600">Edit Quotes</a>
                     </td>
 
                     <td class="px-4 py-4 whitespace-nowrap text-right text-4xl font-medium">
@@ -27,8 +31,6 @@
 
                             <button class="text-4xl text-gray-400">Delete</button>
                         </form>
-                    </td>
-                    <td>
                     </td>
                 </tr>
                 @endforeach                

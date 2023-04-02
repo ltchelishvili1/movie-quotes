@@ -28,9 +28,15 @@ Route::group(['prefix' => 'user'], function () {
 });
 Route::get('set-language/{language}', [LanguageController::class, 'setLanguage'])->name('set-language');
 
-Route::get('admin/movies', [AdminMovieController::class, 'index'])->name('adminpanel');
-Route::get('admin/movies/{movie}/edit', [AdminMovieController::class, 'edit'])->name('movie.edit');
-Route::patch('admin/movies/{movie}', [AdminMovieController::class, 'update'])->name('movie.update');
-Route::delete('admin/movies/{movie}', [AdminMovieController::class, 'destroy'])->name('movie.delete');
-Route::get('admin/movies/create', [AdminMovieController::class, 'create'])->name('movie.create');
-Route::post('admin/movies', [AdminMovieController::class, 'store'])->name('movie.store');
+Route::group(['prefix' => 'admin/movies'], function () {
+	Route::middleware(['auth'])->group(function () {	
+		Route::get('/', [AdminMovieController::class, 'index'])->name('adminpanel');
+		Route::post('/', [AdminMovieController::class, 'store'])->name('movie.store');
+		Route::patch('/{movie}', [AdminMovieController::class, 'update'])->name('movie.update');
+		Route::delete('/{movie}', [AdminMovieController::class, 'destroy'])->name('movie.delete');
+		Route::get('/{movie}/edit', [AdminMovieController::class, 'edit'])->name('movie.edit');
+		Route::get('/create', [AdminMovieController::class, 'create'])->name('movie.create');
+		
+	});
+});
+
