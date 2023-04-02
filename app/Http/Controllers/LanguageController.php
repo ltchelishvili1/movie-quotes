@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Session;
 
 class LanguageController extends Controller
 {
-	public function changeLang($lang): RedirectResponse
+	public function setLanguage($lang): RedirectResponse
 	{
 		if (array_key_exists($lang, Config::get('languages')))
 		{

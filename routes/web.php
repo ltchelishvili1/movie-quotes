@@ -17,14 +17,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', [QuoteController::class, 'index'])->name('home');
-Route::get('movies/{movie}', [MovieController::class, 'show'])->name('movies.show');
-
+Route::get('/movies/{movie}', [MovieController::class, 'show'])->name('movies.show');
 Route::group(['prefix' => 'user'], function () {
 	Route::middleware(['guest'])->group(function () {
-		Route::get('login', [LoginController::class, 'index'])->name('login');
-		Route::post('login', [LoginController::class, 'login'])->name('login.store');
+		Route::get('/login', [LoginController::class, 'index'])->name('login.index');
+		Route::post('/login', [LoginController::class, 'login'])->name('login');
 	});
-	Route::get('logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
+	Route::get('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
 });
-
-Route::get('switchlang/{language}', [LanguageController::class, 'changeLang'])->name('lang.change');
+Route::get('set-language/{language}', [LanguageController::class, 'setLanguage'])->name('set-language');
