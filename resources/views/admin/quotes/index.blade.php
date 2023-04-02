@@ -18,8 +18,8 @@
                     <td class="px-4 py-4">
                         <div class="flex items-center">
                             <div class="text-4xl font-medium text-gray-900">
-                                <img class="h-48 rounded-lg"
-                                    src='https://nostal.ge/wp-content/uploads/2018/07/jariskacis-mama-.png' />
+                                <img class="h-48 w-48 rounded-lg"
+                                src={{asset('storage/' . $quote->thumbnail)}} alt='as'/>
                             </div>
                         </div>
                     </td>
