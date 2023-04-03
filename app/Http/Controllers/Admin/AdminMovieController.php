@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\CreateMovie;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreMovieRequest;
 use App\Http\Requests\UpdateMovieRequest;
 use App\Models\Movie;
 use Illuminate\Http\RedirectResponse;
@@ -13,7 +14,7 @@ class AdminMovieController extends Controller
 	public function index(): View
 	{
 		return view('admin.movies.index', [
-			'movies' => Movie::get()->where('user_id', auth()->id()),
+			'movies' => Movie::all(),
 		]);
 	}
 
@@ -27,22 +28,15 @@ class AdminMovieController extends Controller
 		return view('admin.movies.edit', ['movie' => $movie]);
 	}
 
-	public function store(CreateMovie $request): RedirectResponse
+	public function store(StoreMovieRequest $request): RedirectResponse
 	{
-		$validated = $request->validated();
-		$attributes['name'] = ['en' => $validated['name_en'], 'ka' => $validated['name_ka']];
-		$attributes['user_id'] = auth()->id();
-		Movie::create($attributes);
+		Movie::create($request->validated());
 		return redirect(route('adminpanel'));
 	}
 
 	public function Update(UpdateMovieRequest $request, Movie $movie): RedirectResponse
 	{
-		$validated = $request->validated();
-		$translations = ['en' => $validated['name_en'], 'ka' => $validated['name_ka']];
-		$movie->setTranslations('name', $translations);
-		$movie->save();
-
+		Movie::create($request->validated());
 		return redirect(route('adminpanel'));
 	}
 

@@ -22,8 +22,8 @@ class UpdateQuoteRequest extends FormRequest
 	public function rules(): array
 	{
 		return [
-			'title_en'    => 'required',
-			'title_ka'    => 'required',
+			'title_en'    => 'required|max:255',
+			'title_ka'    => 'required|max:255',
 		];
 	}
 }

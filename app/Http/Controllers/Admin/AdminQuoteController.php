@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\CreateQuote;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreQuoteRequest;
 use App\Http\Requests\UpdateQuoteRequest;
 use App\Models\Movie;
 use App\Models\Quote;
@@ -31,7 +32,7 @@ class AdminQuoteController extends Controller
 		return view('admin.quotes.edit', ['movie' => $movie, 'quote' => $quote]);
 	}
 
-	public function store(CreateQuote $request, Movie $movie): RedirectResponse
+	public function store(StoreQuoteRequest $request, Movie $movie): RedirectResponse
 	{
 		$validated = $request->validated();
 		$attributes['title'] = ['en' => $validated['title_en'], 'ka' => $validated['title_ka']];
@@ -41,6 +42,7 @@ class AdminQuoteController extends Controller
 		$attributes['thumbnail'] = $path;
 		Quote::create($attributes);
 		return redirect()->back();
+		// aq vcade requestshi gadatana magrad thumbnails validated funqcia isev filead aketebs
 	}
 
 	public function Update(UpdateQuoteRequest $request, Movie $movie, Quote $quote): RedirectResponse

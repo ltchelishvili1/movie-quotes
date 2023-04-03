@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateMovie extends FormRequest
+class StoreQuoteRequest extends FormRequest
 {
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -22,8 +22,9 @@ class CreateMovie extends FormRequest
 	public function rules(): array
 	{
 		return [
-			'name_en'    => 'required',
-			'name_ka'    => 'required',
+			'title_en'    => 'required|max:255',
+			'title_ka'    => 'required|max:255',
+			'thumbnail'   => 'required|image',
 		];
 	}
 }
