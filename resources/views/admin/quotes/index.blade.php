@@ -25,11 +25,11 @@
                     </td>
 
                     <td class="px-4 py-4 whitespace-nowrap text-right text-4xl font-medium">
-                        <a href="{{route('quote.edit', [$quote->movie,$quote])}}" class="text-blue-500 hover:text-blue-600">Edit</a>
+                        <a href="{{route('quotes.edit', [$quote->movie,$quote])}}" class="text-blue-500 hover:text-blue-600">Edit</a>
                     </td>
 
                     <td class="px-4 py-4 whitespace-nowrap text-right text-4xl font-medium">
-                        <form method="POST" action="{{route('quote.delete', [$quote->movie,$quote])}}">
+                        <form method="POST" action="{{route('quotes.delete', [$quote->movie,$quote])}}">
                             @csrf
                             @method('DELETE')
 
@@ -41,7 +41,7 @@
             </tbody>
         </table>
         <div class="pt-4">
-            <a href="{{route('quote.create',[$movie_id])}}" class="inline-block py-3 px-6 text-white font-bold bg-blue-500 rounded hover:bg-blue-600">
+            <a href="{{route('quotes.create',[$movie_id])}}" class="inline-block py-3 px-6 text-white font-bold bg-blue-500 rounded hover:bg-blue-600">
                 Add New Quote
             </a>
         </div>

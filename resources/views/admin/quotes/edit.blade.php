@@ -1,6 +1,6 @@
 <x-layout>
     <div class="flex flex-col items-center  w-full h-full h-screen justify-center ">
-        <form method="POST" action="{{route('quote.update',[$quote->movie,$quote])}}" class="mt-10 w-1/6 " enctype="multipart/form-data">
+        <form method="POST" action="{{route('quotes.update',[$quote->movie,$quote])}}" class="mt-10 w-1/6 " enctype="multipart/form-data">
             @csrf
             @method('PATCH')
             <x-form.input name="title_en" :value="old('title',$quote->getTranslation('title', 'en'))" />

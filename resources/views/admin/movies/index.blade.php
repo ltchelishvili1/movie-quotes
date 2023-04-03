@@ -17,7 +17,7 @@
                     </td>
 
                     <td class="px-4 py-4 whitespace-nowrap text-right text-4xl font-medium">
-                        <a href="{{ route('movie.edit', [$movie]) }}" class="text-blue-500 hover:text-blue-600">Edit Movie</a>
+                        <a href="{{ route('movies.edit', [$movie]) }}" class="text-blue-500 hover:text-blue-600">Edit Movie</a>
                     </td>
 
                     <td class="px-4 py-4 whitespace-nowrap text-right text-4xl font-medium">
@@ -25,7 +25,7 @@
                     </td>
 
                     <td class="px-4 py-4 whitespace-nowrap text-right text-4xl font-medium">
-                        <form method="POST" action="{{ route('movie.delete', [$movie]) }}">
+                        <form method="POST" action="{{ route('movies.delete', [$movie]) }}">
                             @csrf
                             @method('DELETE')
 
@@ -37,7 +37,7 @@
             </tbody>
         </table>
         <div class="pt-4">
-            <a href="{{route('movie.create')}}" class="inline-block py-3 px-6 text-white font-bold bg-blue-500 rounded hover:bg-blue-600">Add New Movie</a>
+            <a href="{{route('movies.create')}}" class="inline-block py-3 px-6 text-white font-bold bg-blue-500 rounded hover:bg-blue-600">Add New Movie</a>
        </div>
        
     </div>
