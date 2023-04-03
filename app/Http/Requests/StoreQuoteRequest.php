@@ -7,14 +7,6 @@ use Illuminate\Foundation\Http\FormRequest;
 class StoreQuoteRequest extends FormRequest
 {
 	/**
-	 * Determine if the user is authorized to make this request.
-	 */
-	public function authorize(): bool
-	{
-		return true;
-	}
-
-	/**
 	 * Get the validation rules that apply to the request.
 	 *
 	 * @return array<string, \Illuminate\Contracts\Validation\Rule|array|string>
@@ -22,9 +14,23 @@ class StoreQuoteRequest extends FormRequest
 	public function rules(): array
 	{
 		return [
-			'title_en'    => 'required|max:255',
-			'title_ka'    => 'required|max:255',
-			'thumbnail'   => 'required|image',
+			'title_en' => 'required|min:3|max:255',
+			'title_ka' => 'required|min:3|max:255',
+			'user_id'  => 'required',
+			'movie_id' => 'required',
+			'title'    => 'required',
 		];
+	}
+
+	public function prepareForValidation()
+	{
+		$this->merge([
+			'title' => [
+				'en' => $this->title_en,
+				'ka' => $this->title_ka,
+			],
+			'user_id'  => auth()->id(),
+			'movie_id' => request()->movie->id,
+		]);
 	}
 }

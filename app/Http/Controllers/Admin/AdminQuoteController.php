@@ -35,27 +35,16 @@ class AdminQuoteController extends Controller
 	public function store(StoreQuoteRequest $request, Movie $movie): RedirectResponse
 	{
 		$validated = $request->validated();
-		$attributes['title'] = ['en' => $validated['title_en'], 'ka' => $validated['title_ka']];
-		$attributes['user_id'] = auth()->id();
-		$attributes['movie_id'] = $movie->id;
-		$path = request()->file('thumbnail')->store('thumbnails');
-		$attributes['thumbnail'] = $path;
-		Quote::create($attributes);
+		$validated['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+		Quote::create($validated);
 		return redirect()->back();
-		// aq vcade requestshi gadatana magrad thumbnails validated funqcia isev filead aketebs
 	}
 
 	public function Update(UpdateQuoteRequest $request, Movie $movie, Quote $quote): RedirectResponse
 	{
 		$validated = $request->validated();
-		$attributes['title'] = ['en' => $validated['title_en'], 'ka' => $validated['title_ka']];
-		if ($attributes['thumbnail'] ?? false)
-		{
-			$path = request()->file('thumbnail')->store('thumbnails');
-			$attributes['thumbnail'] = $path;
-		}
-
-		$quote->update($attributes);
+		$validated['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+		$quote->update($validated);
 
 		return redirect(route('adminpanel'));
 	}
