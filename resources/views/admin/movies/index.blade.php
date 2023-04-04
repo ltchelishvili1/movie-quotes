@@ -17,11 +17,11 @@
                     </td>
 
                     <td class="px-4 py-4 whitespace-nowrap text-right text-4xl font-medium">
-                        <a href="{{ route('movies.edit', [$movie]) }}" class="text-blue-500 hover:text-blue-600">Edit Movie</a>
+                        <a href="{{ route('movies.edit', [$movie]) }}" class="text-blue-500 hover:text-blue-600">{{__("validation.edit_movies")}}</a>
                     </td>
 
                     <td class="px-4 py-4 whitespace-nowrap text-right text-4xl font-medium">
-                        <a href="{{route('adminquotes',[$movie])}}" class="text-blue-500 hover:text-blue-600">Edit Quotes</a>
+                        <a href="{{route('adminquotes',[$movie])}}" class="text-blue-500 hover:text-blue-600">{{__("validation.edit_quotes")}}</a>
                     </td>
 
                     <td class="px-4 py-4 whitespace-nowrap text-right text-4xl font-medium">
@@ -29,7 +29,7 @@
                             @csrf
                             @method('DELETE')
 
-                            <button class="text-4xl text-gray-400">Delete</button>
+                            <button class="text-4xl text-gray-400">{{__("validation.delete")}}</button>
                         </form>
                     </td>
                 </tr>
@@ -37,7 +37,7 @@
             </tbody>
         </table>
         <div class="pt-4">
-            <a href="{{route('movies.create')}}" class="inline-block py-3 px-6 text-white font-bold bg-blue-500 rounded hover:bg-blue-600">Add New Movie</a>
+            <a href="{{route('movies.create')}}" class="inline-block py-3 px-6 text-white font-bold bg-blue-500 rounded hover:bg-blue-600">{{__("validation.add_movies")}}</a>
        </div>
        
     </div>
