@@ -34,20 +34,18 @@ class UpdateQuoteRequest extends FormRequest
 		]);
 	}
 
-		
 	public function messages()
 	{
 		return [
-			'title_en.min' => __('validation.min'),
-			'title_ka.min' => __('validation.min'),
-			'title_ka.min' => __('validation.max'),
-			'title_ka.max' => __('validation.max'),
-			'title_en.required' =>  __('validation.field_validation'),
+			'title_en.min'      => __('validation.min'),
+			'title_ka.min'      => __('validation.min'),
+			'title_ka.min'      => __('validation.max'),
+			'title_ka.max'      => __('validation.max'),
+			'title_en.required' => __('validation.field_validation'),
 			'title_ka.required' => __('validation.field_validation'),
 			'user_id.required'  => __('validation.field_validation'),
 			'movie_id.required' => __('validation.field_validation'),
-			'title.required'    => __('validation.field_validation')
+			'title.required'    => __('validation.field_validation'),
 		];
 	}
-
 }

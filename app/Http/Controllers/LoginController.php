@@ -21,7 +21,7 @@ class LoginController extends Controller
 		if (!auth()->attempt($validated))
 		{
 			throw ValidationException::withMessages([
-				'email' => __('validation.wrong_credential')
+				'email' => __('validation.wrong_credential'),
 			]);
 		}
 

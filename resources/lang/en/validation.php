@@ -3,7 +3,7 @@
 return [
 	// ...
 	'min'               => 'Should be at least 8 charachters!',
-    'max'        => 'Should be no more thant 255 charachters!',
+	'max'               => 'Should be no more thant 255 charachters!',
 	'email'             => 'email',
 	'password'          => 'password',
 	'signin'            => 'Sign In!',
@@ -20,7 +20,7 @@ return [
 	'title_en'          => 'Title(eng)',
 	'title_ka'          => 'Title(geo)',
 	'thumbnail'         => 'Thumbnail',
-	'wrong_credential' => 'Your provided credential could not be verified.',
-	'field_validation' => 'This field is required',
-	'email' => 'Should be Email'
+	'wrong_credential'  => 'Your provided credential could not be verified.',
+	'field_validation'  => 'This field is required',
+	'email'             => 'Should be Email',
 ];
