@@ -45,6 +45,7 @@
             @endif
         <div class="pt-4">
             <a href="{{route('movies.create')}}" class="inline-block py-3 px-6 text-white font-bold bg-blue-500 rounded hover:bg-blue-600">{{__("validation.add_movies")}}</a>
+   
        </div>
        
     </div>

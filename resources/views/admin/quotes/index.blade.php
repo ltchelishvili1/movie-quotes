@@ -47,9 +47,12 @@
         </p>
             @endif
         <div class="pt-4">
-            <a href="{{route('quotes.create',[$movie_id])}}" class="inline-block py-3 px-6 text-white font-bold bg-blue-500 rounded hover:bg-blue-600">
+            <a class="bg-gray-100 p-4 rounded-lg" href="{{route('adminpanel')}}">{{__('validation.back_to_movies')}}</a>
+          
+          <a href="{{route('quotes.create',[$movie_id])}}" class="inline-block py-3 px-6 text-white font-bold bg-blue-500 rounded hover:bg-blue-600">
                 {{__("validation.add_quotes")}}
             </a>
+         
         </div>
 
     </div>

@@ -37,7 +37,7 @@ class AdminQuoteController extends Controller
 		$validated = $request->validated();
 		$validated['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
 		Quote::create($validated);
-		return redirect()->back();
+		return redirect(route('adminpanel'));
 	}
 
 	public function Update(UpdateQuoteRequest $request, Movie $movie, Quote $quote): RedirectResponse

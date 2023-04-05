@@ -25,4 +25,9 @@ return [
 	'email'                => 'შეიყვანეთ ემაილი',
 	'movies_empty'         => 'ფილმი ფრაზით ვერ მოიძებნა!.',
 	'quotes_empty'         => 'ფრაზა ვერ მოიძებნა!.',
+	'back_to_movies'       => 'ფილმები',
+	'back_to_quotes'       => 'ფრაზები',
+	'back_to_home'         => 'მთავარი',
+	'logout'               => 'გასვლა',
+	'admin_panel'          => 'ადმინის გვერდი',
 ];

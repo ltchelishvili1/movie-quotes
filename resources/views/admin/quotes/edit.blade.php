@@ -1,5 +1,7 @@
 <x-layout>
+    
     <div class="flex flex-col items-center  w-full h-full h-screen justify-center ">
+        <a class="bg-gray-100 p-4 rounded-lg" href="{{route("adminquotes", [$quote->movie])}}">{{__('validation.back_to_quotes')}}</a>
         <form method="POST" action="{{route('quotes.update',[$quote->movie,$quote])}}" class="mt-10 w-1/6 " enctype="multipart/form-data">
             @csrf
             @method('PATCH')

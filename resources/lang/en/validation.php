@@ -25,4 +25,9 @@ return [
 	'email'                => 'Should be Email',
 	'movies_empty'         => 'No movies with quotes!.',
 	'quotes_empty'         => 'No quotes!.',
+	'back_to_movies'       => 'Back to movies',
+	'back_to_quotes'       => 'Back to quotes',
+	'back_to_home'         => 'Home Page',
+	'logout'               => 'Log Out',
+	'admin_panel'          => 'Admin Panel',
 ];
