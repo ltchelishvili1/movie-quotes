@@ -36,7 +36,7 @@ class StoreMovieRequest extends FormRequest
 	{
 		return [
 			'name_en.min'      => __('validation.min'),
-			'name_ka.min'      => __('validation.min'),
+			'name_ka.min'      => __('validation.max'),
 			'name_en.max'      => __('validation.max'),
 			'name_ka.max'      => __('validation.max'),
 			'name_en.required' => __('validation.field_validation'),

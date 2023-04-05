@@ -39,7 +39,7 @@ class StoreQuoteRequest extends FormRequest
 		return [
 			'title_en.min'      => __('validation.min'),
 			'title_ka.min'      => __('validation.min'),
-			'title_ka.min'      => __('validation.max'),
+			'title_en.max'      => __('validation.max'),
 			'title_ka.max'      => __('validation.max'),
 			'title_en.required' => __('validation.field_validation'),
 			'title_ka.required' => __('validation.field_validation'),
