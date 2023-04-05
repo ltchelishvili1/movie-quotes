@@ -1,7 +1,10 @@
 <x-layout>
     <div class="flex flex-col items-center  w-full h-full h-screen flex flex-col items-center justify-center">
         @if (!empty($quote))
-            <img class="h-96 rounded-lg max-w-lg min-w-lg" src={{asset('storage/' . $quote->thumbnail)}} />
+        @if($quote->thumbnail!=null)
+        <img class="h-48 w-48 rounded-lg" src={{asset('storage/' . $quote->thumbnail)}}
+        alt='as'/>
+        @endif
             <p class="text-5xl pt-16 text-white max-w-6xl">{{$quote->title}}</p>
             <a class="text-5xl pt-28 text-white underline"
                 href="{{route('movies.show', ['movie' => $quote->movie->id]);}}">{{$quote->movie->name}}</a> 
