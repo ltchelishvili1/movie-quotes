@@ -26,6 +26,7 @@ Movie Quotes Generator appplication produces random quotes from random movies. A
 ## Tech Stack
 - Laravel@6.x - back-end framework
 - Spatie Translatable - package for translation
+- Tailwind3.3.1@up - front-end framework
 
 ## Getting Started
 
