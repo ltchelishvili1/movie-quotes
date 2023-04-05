@@ -35,7 +35,11 @@ class AdminQuoteController extends Controller
 	public function store(StoreQuoteRequest $request, Movie $movie): RedirectResponse
 	{
 		$validated = $request->validated();
-		$validated['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+		$validated = $request->validated();
+		if (request()->file('thumbnail') != null)
+		{
+			$validated['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+		}
 		Quote::create($validated);
 		return redirect(route('adminpanel'));
 	}
@@ -43,7 +47,10 @@ class AdminQuoteController extends Controller
 	public function Update(UpdateQuoteRequest $request, Movie $movie, Quote $quote): RedirectResponse
 	{
 		$validated = $request->validated();
-		$validated['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+		if (request()->file('thumbnail') != null)
+		{
+			$validated['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+		}
 		$quote->update($validated);
 
 		return redirect(route('adminpanel'));
