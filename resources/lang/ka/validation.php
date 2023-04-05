@@ -22,7 +22,6 @@ return [
 	'thumbnail'            => 'სურათი',
 	'wrong_credential'     => 'არასწორი მონაცემები.',
 	'field_validation'     => 'ველი აუცილებელია',
-	'email'                => 'შეიყვანეთ ემაილი',
 	'movies_empty'         => 'ფილმი ფრაზით ვერ მოიძებნა!.',
 	'quotes_empty'         => 'ფრაზა ვერ მოიძებნა!.',
 	'back_to_movies'       => 'ფილმები',

@@ -22,7 +22,6 @@ return [
 	'thumbnail'            => 'Thumbnail',
 	'wrong_credential'     => 'Your provided credential could not be verified.',
 	'field_validation'     => 'This field is required',
-	'email'                => 'Should be Email',
 	'movies_empty'         => 'No movies with quotes!.',
 	'quotes_empty'         => 'No quotes!.',
 	'back_to_movies'       => 'Back to movies',
