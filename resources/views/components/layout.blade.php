@@ -17,6 +17,13 @@
 </style>
 
 <body class="background-radial-gradient">
+    @auth
+    <div class="fixed flex right-0 mt-2">
+        <a class="bg-gray-600 p-4 rounded-lg mr-3 hover:bg-gray-400" href="{{route("home")}}">{{__('validation.back_to_home')}}</a>
+        <a class="bg-gray-600 p-4 rounded-lg hover:bg-gray-400" href="{{route("adminpanel")}}">{{__('validation.admin_panel')}}</a>
+        <a class="bg-gray-600 p-4 rounded-lg ml-3 mr-3 hover:bg-gray-400" href="{{route("logout")}}">{{__('validation.logout')}}</a>
+    </div>
+    @endauth
     <x-languages />
     <div>
         {{$slot}}

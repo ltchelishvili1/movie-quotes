@@ -1,9 +1,9 @@
 <x-layout>
     
     <div class="flex flex-col items-center justify-center h-screen ">
-       
         <table class=" divide-y divide-gray-200 border rounded-3xl">
             <tbody class="bg-gray-300 divide-y divide-gray-200">
+              
                 @foreach ($movies as $movie)
                 <tr>
                     <td class="px-4 py-4">
@@ -33,11 +33,19 @@
                         </form>
                     </td>
                 </tr>
-                @endforeach                
+                @endforeach  
+                    
             </tbody>
         </table>
+     
+        @if (empty($movies->count()))
+        <p class="text-4xl text-gray-700">
+            {{__("validation.movies_empty")}}
+        </p>
+            @endif
         <div class="pt-4">
             <a href="{{route('movies.create')}}" class="inline-block py-3 px-6 text-white font-bold bg-blue-500 rounded hover:bg-blue-600">{{__("validation.add_movies")}}</a>
+   
        </div>
        
     </div>

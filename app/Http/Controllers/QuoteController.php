@@ -12,8 +12,9 @@ class QuoteController extends Controller
 	 */
 	public function index(): View
 	{
+		$quote = Quote::inRandomOrder()->first() ?? [];
 		return view('quotes.index', [
-			'quote' => Quote::get()->random(),
+			'quote' => $quote,
 		]);
 	}
 }

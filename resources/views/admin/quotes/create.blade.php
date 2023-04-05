@@ -1,6 +1,7 @@
 <x-layout>
     <div class="flex flex-col items-center  w-full h-full h-screen justify-center ">
         <h1 class="text-center  text-5xl block mb-2  font-bold  text-blue-200">{{__("validation.add_quotes")}}</h1>
+        <a class="bg-gray-100 p-4 rounded-lg" href="{{route("adminquotes", [$movie])}}">{{__('validation.back_to_quotes')}}</a>
         <form method="POST" action="{{route('quotes.store',[$movie])}}" class="mt-5 w-1/6" enctype="multipart/form-data">
             @csrf
             <x-form.input name="title_en"  />
@@ -8,5 +9,6 @@
             <x-form.input name='thumbnail' type='file'/>
             <x-form.button>{{__("validation.create")}}</x-form.button>
         </form>
+        
     </div>
 </x-layout>
