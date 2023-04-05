@@ -30,4 +30,5 @@ return [
 	'back_to_home'         => 'მთავარი',
 	'logout'               => 'გასვლა',
 	'admin_panel'          => 'ადმინის გვერდი',
+	'shouldbe_email'       => 'შეიყვანეთ ემაილი',
 ];

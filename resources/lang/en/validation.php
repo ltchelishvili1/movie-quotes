@@ -30,4 +30,5 @@ return [
 	'back_to_home'         => 'Home Page',
 	'logout'               => 'Log Out',
 	'admin_panel'          => 'Admin Panel',
+	'shouldbe_email'       => 'Should be Email',
 ];

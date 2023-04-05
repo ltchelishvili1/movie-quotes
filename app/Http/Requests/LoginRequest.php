@@ -25,7 +25,7 @@ class LoginRequest extends FormRequest
 			'password.min'      => __('validation.min'),
 			'password.max'      => __('validation.max'),
 			'password.required' => __('validation.field_validation'),
-			'email.email'       => __('validation.min'),
+			'email.email'       => __('validation.shouldbe_email'),
 			'email.max'         => __('validation.max'),
 			'email.required'    => __('validation.field_validation'),
 		];
