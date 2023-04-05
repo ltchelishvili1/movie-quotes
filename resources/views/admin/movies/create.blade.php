@@ -1,5 +1,4 @@
 <x-layout>
-  
     <div class="flex flex-col items-center  w-full h-full h-screen justify-center ">
         <h1 class="text-center  text-5xl block mb-2  font-bold  text-blue-200">{{strtoupper(__("validation.add_movies"))}}</h1>
         <form method="POST" action="{{route('movies.store')}}" class="mt-5 w-1/6 ">

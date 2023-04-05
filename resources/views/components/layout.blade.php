@@ -17,6 +17,7 @@
 </style>
 
 <body class="background-radial-gradient">
+    <a href="/">back</a>
     <x-languages />
     <div>
         {{$slot}}

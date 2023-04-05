@@ -27,7 +27,7 @@ class LoginController extends Controller
 
 		session()->regenerate();
 
-		return redirect(route('home'));
+		return redirect(route('adminpanel'));
 	}
 
 public function logout(): RedirectResponse

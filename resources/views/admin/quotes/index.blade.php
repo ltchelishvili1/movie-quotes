@@ -1,6 +1,7 @@
 <x-layout>
 
     <div class="flex flex-col items-center justify-center h-screen px-32 ">
+        @if (!empty($quotes->count()))
         <table class=" divide-y divide-gray-200 border rounded-3xl">
             <tbody class="bg-gray-300 divide-y divide-gray-200">
                 @foreach ($quotes as $quote)
@@ -40,6 +41,11 @@
                 @endforeach
             </tbody>
         </table>
+        @else
+        <p class="text-4xl text-gray-700">
+            {{__("validation.quotes_empty")}}
+        </p>
+            @endif
         <div class="pt-4">
             <a href="{{route('quotes.create',[$movie_id])}}" class="inline-block py-3 px-6 text-white font-bold bg-blue-500 rounded hover:bg-blue-600">
                 {{__("validation.add_quotes")}}
