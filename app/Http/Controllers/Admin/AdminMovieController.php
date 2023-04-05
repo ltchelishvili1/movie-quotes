@@ -36,7 +36,7 @@ class AdminMovieController extends Controller
 
 	public function Update(UpdateMovieRequest $request, Movie $movie): RedirectResponse
 	{
-		Movie::create($request->validated());
+		$movie->update($request->validated());
 		return redirect(route('adminpanel'));
 	}
 

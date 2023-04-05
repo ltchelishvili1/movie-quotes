@@ -21,7 +21,7 @@ class LoginController extends Controller
 		if (!auth()->attempt($validated))
 		{
 			throw ValidationException::withMessages([
-				'email' => 'Your provided credential could not be verified.',
+				'email' => __('validation.wrong_credential'),
 			]);
 		}
 

@@ -25,7 +25,7 @@
                     </td>
 
                     <td class="px-4 py-4 whitespace-nowrap text-right text-4xl font-medium">
-                        <a href="{{route('quotes.edit', [$quote->movie,$quote])}}" class="text-blue-500 hover:text-blue-600">Edit</a>
+                        <a href="{{route('quotes.edit', [$quote->movie,$quote])}}" class="text-blue-500 hover:text-blue-600">{{__("validation.edit")}}</a>
                     </td>
 
                     <td class="px-4 py-4 whitespace-nowrap text-right text-4xl font-medium">
@@ -33,7 +33,7 @@
                             @csrf
                             @method('DELETE')
 
-                            <button class="text-4xl text-gray-400">Delete</button>
+                            <button class="text-4xl text-gray-400">{{__("validation.delete")}}</button>
                         </form>
                     </td>
                 </tr>
@@ -42,7 +42,7 @@
         </table>
         <div class="pt-4">
             <a href="{{route('quotes.create',[$movie_id])}}" class="inline-block py-3 px-6 text-white font-bold bg-blue-500 rounded hover:bg-blue-600">
-                Add New Quote
+                {{__("validation.add_quotes")}}
             </a>
         </div>
 

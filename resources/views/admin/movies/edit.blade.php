@@ -5,7 +5,7 @@
             @method('PATCH')
             <x-form.input name="name_en" :value="old('name',$movie->getTranslation('name', 'en'))" />
             <x-form.input name="name_ka" :value="old('name',$movie->getTranslation('name', 'ka'))" />
-            <x-form.button>Update</x-form.button>
+            <x-form.button>{{__("validation.update")}}</x-form.button>
 
         </form>
     </div>
