@@ -2,7 +2,7 @@
     <div class="flex flex-col items-center  w-full h-full h-screen flex flex-col items-center justify-center">
         @if (!empty($quote))
         @if($quote->thumbnail!=null)
-        <img class="h-48 w-48 rounded-lg" src={{asset('storage/' . $quote->thumbnail)}}
+        <img class="h-6xl w-6xl rounded-lg" src={{asset('storage/' . $quote->thumbnail)}}
         alt='as'/>
         @endif
             <p class="text-5xl pt-16 text-white max-w-6xl">{{$quote->title}}</p>
