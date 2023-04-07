@@ -22,7 +22,7 @@ class LoginRequest extends FormRequest
 	public function messages()
 	{
 		return [
-			'password.min'      => __('validation.min'),
+			'password.min'      => __('validation.password_min'),
 			'password.max'      => __('validation.max'),
 			'password.required' => __('validation.field_validation'),
 			'email.email'       => __('validation.shouldbe_email'),
