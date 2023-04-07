@@ -8,7 +8,13 @@ module.exports = {
   theme: {
       fontFamily:{
         'Sansation':['Sansation']
+      },
+      extend: {
+        height: {
+          '128': '32rem',
+        }
       }
   },
   plugins: [],
 }
+
