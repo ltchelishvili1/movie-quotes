@@ -30,10 +30,10 @@ class LoginController extends Controller
 		return redirect(route('adminpanel'));
 	}
 
-public function logout(): RedirectResponse
-{
-	auth()->logout();
+	public function logout(): RedirectResponse
+	{
+		auth()->logout();
 
-	return redirect(route('home'));
-}
+		return redirect(route('home'));
+	}
 }

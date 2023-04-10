@@ -19,9 +19,10 @@ class QuoteFactory extends Factory
 	public function definition(): array
 	{
 		return [
-			'user_id'  => User::factory(),
-			'movie_id' => Movie::factory(),
-			'title'    => $this->faker->paragraph,
+			'user_id'   => User::factory(),
+			'movie_id'  => Movie::factory(),
+			'title'     => ['en' => fake()->sentence(), 'ka' => fake('ka_GE')->name()],
+			'thumbnail' => 'thumbnails/' . $this->faker->image('public/storage/thumbnails', 400, 300, null, false),
 		];
 	}
 }

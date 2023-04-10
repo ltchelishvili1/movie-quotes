@@ -29,12 +29,11 @@ class AdminQuoteController extends Controller
 
 	public function edit(Movie $movie, Quote $quote): View
 	{
-		return view('admin.quotes.edit', ['movie' => $movie, 'quote' => $quote]);
+		return view('admin.quotes.edit', ['quote' => $quote]);
 	}
 
 	public function store(StoreQuoteRequest $request, Movie $movie): RedirectResponse
 	{
-		$validated = $request->validated();
 		$validated = $request->validated();
 		if (request()->file('thumbnail') != null)
 		{
