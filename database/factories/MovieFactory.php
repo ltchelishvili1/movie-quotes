@@ -19,7 +19,7 @@ class MovieFactory extends Factory
 	{
 		return [
 			'user_id' => User::factory(),
-			'name'    => $this->faker->sentence,
+			'name'    => ['en' => fake()->name(), 'ka' => fake('ka_GE')->name()],
 		];
 	}
 }

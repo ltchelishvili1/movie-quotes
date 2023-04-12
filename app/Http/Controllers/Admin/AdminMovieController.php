@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreMovieRequest;
-use App\Http\Requests\UpdateMovieRequest;
+use App\Http\Requests\Movie\StoreMovieRequest;
+use App\Http\Requests\Movie\UpdateMovieRequest;
 use App\Models\Movie;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -34,7 +34,7 @@ class AdminMovieController extends Controller
 		return redirect(route('adminpanel'));
 	}
 
-	public function Update(UpdateMovieRequest $request, Movie $movie): RedirectResponse
+	public function update(UpdateMovieRequest $request, Movie $movie): RedirectResponse
 	{
 		$movie->update($request->validated());
 		return redirect(route('adminpanel'));
