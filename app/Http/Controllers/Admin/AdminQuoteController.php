@@ -37,7 +37,7 @@ class AdminQuoteController extends Controller
 		return redirect(route('adminpanel'));
 	}
 
-	public function edit(Movie $movie, Quote $quote): View
+	public function edit(Quote $quote): View
 	{
 		return view('admin.quotes.edit', ['quote' => $quote, 'movies' => Movie::all()]);
 	}
