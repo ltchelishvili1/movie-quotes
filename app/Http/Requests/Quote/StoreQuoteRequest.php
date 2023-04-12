@@ -30,7 +30,6 @@ class StoreQuoteRequest extends FormRequest
 				'ka' => $this->title_ka,
 			],
 			'user_id'  => auth()->id(),
-			'movie_id' => request()->movie->id,
 		]);
 	}
 

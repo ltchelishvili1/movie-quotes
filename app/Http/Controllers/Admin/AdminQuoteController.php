@@ -12,27 +12,21 @@ use Illuminate\View\View;
 
 class AdminQuoteController extends Controller
 {
-	public function index(Movie $movie): View
+	public function index(): View
 	{
 		return view('admin.quotes.index', [
-			'quotes'   => $movie->quotes,
-			'movie_id' => $movie->id,
+			'quotes'   => Quote::all(),
 		]);
 	}
 
-	public function create(Movie $movie): View
+	public function create(): View
 	{
 		return view('admin.quotes.create', [
-			'movie' => $movie,
+			'movies' => Movie::all(),
 		]);
 	}
 
-	public function edit(Movie $movie, Quote $quote): View
-	{
-		return view('admin.quotes.edit', ['quote' => $quote]);
-	}
-
-	public function store(StoreQuoteRequest $request, Movie $movie): RedirectResponse
+	public function store(StoreQuoteRequest $request): RedirectResponse
 	{
 		$validated = $request->validated();
 		if (request()->file('thumbnail') != null)
@@ -43,7 +37,12 @@ class AdminQuoteController extends Controller
 		return redirect(route('adminpanel'));
 	}
 
-	public function Update(UpdateQuoteRequest $request, Movie $movie, Quote $quote): RedirectResponse
+	public function edit(Movie $movie, Quote $quote): View
+	{
+		return view('admin.quotes.edit', ['quote' => $quote, 'movies' => Movie::all()]);
+	}
+
+	public function Update(UpdateQuoteRequest $request, Quote $quote): RedirectResponse
 	{
 		$validated = $request->validated();
 		if (request()->file('thumbnail') != null)
@@ -55,7 +54,7 @@ class AdminQuoteController extends Controller
 		return redirect(route('adminpanel'));
 	}
 
-	public function destroy(Movie $movie, Quote $quote): RedirectResponse
+	public function destroy(Quote $quote): RedirectResponse
 	{
 		$quote->delete();
 		return back();
